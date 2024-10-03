@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeff McDonald - Blockchain Expert, Educator, and Innovator</title>
     <meta name="description" content="Jeff McDonald is a blockchain pioneer, educator, and technology innovator with extensive experience in NEM, Symbol, and LuxTag. Explore his journey from Peace Corps to blockchain leadership.">
-    <meta name="keywords" content="Jeff McDonald, blockchain expert, NEM, Symbol, Bitcoin, LuxTag, cryptocurrency educator, blockchain technology, Peace Corps, Tulsa, Lawton, Stillwater, Lawrence, Oklahoma State University, Tulsa Community College, University of Kansas, Keimyung University, St. Mary's School of Home Economics, Hlotse, Leribe, Union High School, Christian, Peace Corps Volunteer, Lesotho, South Korea, USA, Ryan McDonald, Debra McDonald, Larry McDonald, Apostille, NEM Community Fund, Super Nodes, Seoul, Anyang, Puerto Rico, Palmas Del Mar, Fajardo, Morpheus">
+    <meta name="keywords" content="Jeff McDonald, blockchain expert, NEM, Symbol, Bitcoin, LuxTag, cryptocurrency educator, blockchain technology, Peace Corps, Tulsa, Lawton, Stillwater, Lawrence, Oklahoma State University, Tulsa Community College, University of Kansas, Keimyung University, St. Mary's School of Home Economics, Hlotse, Leribe, Union High School, Christian, Peace Corps Volunteer, Lesotho, South Korea, USA, Ryan McDonald, Debra McDonald, Larry McDonald, Apostille, NEM Community Fund, Super Nodes, Seoul, Anyang, Puerto Rico, Palmas Del Mar, Fajardo, Morpheus, contact Jeff McDonald">
     <meta name="author" content="Jeff McDonald">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jabo38.github.io/">
@@ -134,6 +134,12 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/pjvE3um_wj4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                 </div>
             </section>
+
+            <!-- New Contact Me section -->
+            <section>
+                <h2>Contact Me</h2>
+                <p>Feel free to reach out to me at: <span id="email"></span></p>
+            </section>
         </main>
 
         <footer>
@@ -146,5 +152,17 @@
             </div>
         </footer>
     </div>
+
+    <!-- Email obfuscation script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var username = 'jeff';
+            var domain = 'jefftmcdonald.com';
+            var element = document.getElementById('email');
+            element.innerHTML = '<a href="mailto:' + username + '@' + domain + '" style="color: #007bff; text-decoration: none;">' + username + '@' + domain + '</a>';
+            element.onmouseover = function() { this.getElementsByTagName('a')[0].style.textDecoration = 'underline'; };
+            element.onmouseout = function() { this.getElementsByTagName('a')[0].style.textDecoration = 'none'; };
+        });
+    </script>
 </body>
 </html>
