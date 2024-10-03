@@ -134,12 +134,6 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/pjvE3um_wj4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                 </div>
             </section>
-
-            <!-- New Contact Me section -->
-            <section>
-                <h2>Contact Me</h2>
-                <p>Feel free to reach out to me at: <span id="email"></span></p>
-            </section>
         </main>
 
         <footer>
@@ -149,6 +143,7 @@
                 <a href="https://www.linkedin.com/in/jeffmcdonald/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://www.facebook.com/jeff.t.mcdonald" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://github.com/jabo38/jabo38.github.io" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" id="email-link" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </footer>
     </div>
@@ -158,10 +153,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             var username = 'jeff';
             var domain = 'jefftmcdonald.com';
-            var element = document.getElementById('email');
-            element.innerHTML = '<a href="mailto:' + username + '@' + domain + '" style="color: #007bff; text-decoration: none;">' + username + '@' + domain + '</a>';
-            element.onmouseover = function() { this.getElementsByTagName('a')[0].style.textDecoration = 'underline'; };
-            element.onmouseout = function() { this.getElementsByTagName('a')[0].style.textDecoration = 'none'; };
+            var emailLink = document.getElementById('email-link');
+            emailLink.href = 'mailto:' + username + '@' + domain;
         });
     </script>
 </body>
