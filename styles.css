@@ -77,7 +77,6 @@ li {
 .social-icons {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allow wrapping */
     gap: 1rem;
     margin-top: 2rem;
     padding: 1rem 0;
@@ -94,7 +93,7 @@ li {
     color: var(--link-color);
 }
 
-/* Media query for smaller screens (max-width: 600px) */
+/* Media query for responsive design */
 @media (max-width: 600px) {
     body {
         padding: 10px;
@@ -106,22 +105,5 @@ li {
 
     h2 {
         font-size: 1.5rem;
-    }
-
-    /* Adjust social icons to 2 rows of 4 on smaller screens */
-    .social-icons {
-        justify-content: space-around;
-    }
-
-    .social-icons a {
-        font-size: 1.8rem; /* Slightly smaller icons */
-    }
-    
-    /* Force the icons to wrap into two rows of 4 */
-    .social-icons a:nth-child(5),
-    .social-icons a:nth-child(6),
-    .social-icons a:nth-child(7),
-    .social-icons a:nth-child(8) {
-        margin-top: 10px; /* Add space between the rows */
     }
 }
