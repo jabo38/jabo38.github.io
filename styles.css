@@ -125,7 +125,7 @@ img {
 /* Sections */
 .section {
     margin-bottom: 2rem;
-    padding: 1rem;
+    padding: 0.5rem 1rem 1rem 1rem; /* Reduced top padding */
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
