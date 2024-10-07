@@ -35,7 +35,7 @@ body {
 /* Typography */
 h1, h2 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Reduced from 1rem */
 }
 
 h1 {
@@ -45,7 +45,7 @@ h1 {
 
 h2 {
     font-size: 1.75rem;
-    margin-top: 2rem;
+    margin-top: 1rem; /* Reduced from 2rem */
 }
 
 p {
@@ -124,11 +124,15 @@ img {
 
 /* Sections */
 .section {
-    margin-bottom: 2rem;
-    padding: 0.5rem 1rem 1rem 1rem; /* Reduced top padding */
+    margin-bottom: 1.5rem; /* Reduced from 2rem */
+    padding: 0.25rem 1rem 1rem 1rem; /* Further reduced top padding */
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section h2:first-child {
+    margin-top: 0.5rem;
 }
 
 /* Media queries for responsive design */
