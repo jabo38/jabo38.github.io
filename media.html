@@ -3,47 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Media page for Jeff McDonald's personal website. Features TEDx talk and other media content related to blockchain innovation.">
-    <meta name="keywords" content="Jeff McDonald, blockchain, NEM, Symbol, LuxTag, TEDx talk, media">
-    <meta name="author" content="Jeff McDonald">
-    <title>Jeff McDonald | Media | Blockchain Innovator</title>
-    
-    <!-- Updated Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Jeff McDonald | Media | Blockchain Innovator">
-    <meta property="og:description" content="Media page featuring Jeff McDonald's TEDx talk and other content related to blockchain innovation.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/websiteheadshot2.jpg">
-    <meta property="og:url" content="https://jeffmcdonald.info/media.html">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@theJabo38">
-    <meta name="twitter:title" content="Jeff McDonald | Media | Blockchain Innovator">
-    <meta name="twitter:description" content="Media page featuring Jeff McDonald's TEDx talk and other content related to blockchain innovation.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/websiteheadshot2.jpg">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <title>Jeff McDonald | Media</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #0066cc;
+        }
+        nav a.active {
+            font-weight: bold;
+        }
+        h1 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .video-container {
+            margin-bottom: 30px;
+        }
+        .video-container h2 {
+            color: #0066cc;
+        }
+        .video-container p {
+            margin-left: 20px;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="index.html">Main</a></li>
-            <li><a href="media.html" class="active">Media</a></li>
-        </ul>
+        <a href="index.html">Main</a>
+        <a href="media.html" class="active">Media</a>
     </nav>
-    
-    <div class="container">
-        <header>
-            <h1>Jeff McDonald | Media</h1>
-        </header>
+
+    <header>
+        <h1>Jeff McDonald | Media</h1>
+    </header>
+
+    <main>
+        <section class="video-container">
+            <h2>Video Title 1</h2>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/TogIDxSswPE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <p>Add your summary here.</p>
+        </section>
+
+        <section class="video-container">
+            <h2>Video Title 2</h2>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/1tC7F1WP9qk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <p>Add your summary here.</p>
+        </section>
+
+        <section class="video-container">
+            <h2>Video Title 3</h2>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/S3Cuhh6K00o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <p>Add your summary here.</p>
+        </section>
+
+        <!-- More video sections... -->
+
+        <section class="video-container">
+            <h2>Video Title 18</h2>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/Y6qYKhTbpu8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <p>Add your summary here.</p>
+        </section>
+    </main>
+</body>
+</html>
