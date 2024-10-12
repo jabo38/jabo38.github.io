@@ -1,10 +1,12 @@
 /* Base styles and variables */
 :root {
     --primary-color: #800080;
-    --text-color: #800080;
+    --text-color: #333;
     --link-color: #0066cc;
     --background-color: #f8f8f8;
     --max-width: 800px;
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Roboto', sans-serif;
 }
 
 /* Global styles */
@@ -14,8 +16,13 @@
     padding: 0;
 }
 
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--body-font);
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -28,6 +35,24 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Improved accessibility */
+:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Navigation */
@@ -44,10 +69,11 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav li {
-    margin: 0 10px;
+    margin: 5px 10px;
 }
 
 nav a {
@@ -59,15 +85,18 @@ nav a {
     border-radius: 3px;
 }
 
-nav a:hover, nav a.active {
+nav a:hover, nav a:focus, nav a.active {
     background-color: #fff;
     color: var(--primary-color);
+    outline: none;
 }
 
-/* Typography */
-h1, h2 {
+/* Improved Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
 h1 {
@@ -76,8 +105,16 @@ h1 {
 }
 
 h2 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+h3 {
     font-size: 1.75rem;
-    margin-top: 1rem;
+}
+
+h4 {
+    font-size: 1.5rem;
 }
 
 p {
@@ -91,12 +128,13 @@ a {
     transition: color 0.3s ease;
 }
 
-a:hover {
+a:hover, a:focus {
     text-decoration: underline;
+    outline: none;
 }
 
 /* Lists */
-ul {
+ul, ol {
     padding-left: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -150,15 +188,16 @@ img {
     padding: 0.5rem;
 }
 
-.social-icons a:hover {
+.social-icons a:hover, .social-icons a:focus {
     color: var(--link-color);
     transform: scale(1.1);
+    outline: none;
 }
 
 /* Sections */
 .section {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -168,10 +207,45 @@ img {
     margin-top: 0;
 }
 
+/* Enhanced layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: none;
+    z-index: 1000;
+}
+
+.back-to-top:hover, .back-to-top:focus {
+    background-color: var(--link-color);
+    color: white;
+    text-decoration: none;
+}
+
 /* Responsive design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
     body {
         padding: 10px;
+    }
+
+    .container {
+        padding: 0 15px;
     }
 
     nav ul {
@@ -183,7 +257,48 @@ img {
         margin: 5px 0;
     }
 
-    .section h2 {
-        font-size: 1.5rem;
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000;
+        background: #fff;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    nav, .social-icons, .video-container, .back-to-top {
+        display: none;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    .section {
+        page-break-inside: avoid;
     }
 }
