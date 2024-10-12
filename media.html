@@ -38,20 +38,33 @@
             background-color: #f9f9f9;
         }
         nav {
-            background-color: #fff;
-            padding: 10px 0;
+            background-color: #800080;
+            padding: 15px 0;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 10px;
         }
         nav a {
-            margin-right: 15px;
             text-decoration: none;
-            color: #800080;
+            color: #fff;
             font-weight: bold;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 3px;
         }
         nav a:hover, nav a.active {
-            color: #4b0082;
+            background-color: #fff;
+            color: #800080;
         }
         h1 {
             text-align: center;
@@ -95,6 +108,7 @@
             padding: 20px 0;
             text-align: center;
             margin-top: 30px;
+            border-radius: 5px;
         }
         .social-icons {
             display: flex;
@@ -117,13 +131,22 @@
             .video-container h2 {
                 font-size: 1em;
             }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html">Main</a>
-        <a href="media.html" class="active">Media</a>
+        <ul>
+            <li><a href="index.html">Main</a></li>
+            <li><a href="media.html" class="active">Media</a></li>
+        </ul>
     </nav>
 
     <header>
@@ -140,7 +163,7 @@
             <meta itemprop="uploadDate" content="2023-01-03T08:00:00+08:00">
             <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/S3Cuhh6K00o/0.jpg">
         </section>
-
+        
          <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
             <h2 itemprop="name">Forbes Conference (2018): Moscow</h2>
             <div class="video-wrapper">
@@ -360,7 +383,7 @@
             </div>
             <p>Jeff is interviewed by Token TV where he discusses the current state of blockchain technologies.</p>
         </section>
-
+        
         <section class="video-container">
             <h2>BGN - Blockchain Global News Interview with Jeff McDonald (2018): Las Vegas</h2>
             <div class="video-wrapper">
