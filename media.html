@@ -108,12 +108,22 @@
             padding: 20px 0;
             text-align: center;
             margin-top: 30px;
-            border-radius: 5px;
+            position: relative;
+        }
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #800080;
         }
         .social-icons {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            padding-top: 20px;
         }
         .social-icons a {
             color: #800080;
