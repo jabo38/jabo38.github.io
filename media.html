@@ -8,7 +8,7 @@
     <meta name="keywords" content="Jeff McDonald, videos, presentations, interviews, education">
     <meta name="author" content="Jeff McDonald">
     <link rel="canonical" href="https://www.jeffmcdonald.com/media.html">
-     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
      
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -29,43 +29,59 @@
     
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             line-height: 1.6;
             color: #800080;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #f9f9f9;
         }
         nav {
+            background-color: #fff;
+            padding: 10px 0;
             margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         nav a {
-            margin-right: 10px;
+            margin-right: 15px;
             text-decoration: none;
             color: #800080;
-        }
-        nav a.active {
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover, nav a.active {
+            color: #4b0082;
         }
         h1 {
-            border-bottom: 2px solid #333;
+            text-align: center;
+            border-bottom: 2px solid #800080;
             padding-bottom: 10px;
+            margin-bottom: 30px;
         }
         .video-container {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 30px;
         }
         .video-container h2 {
             color: #800080;
+            font-size: 1.2em;
+            padding: 15px;
+            margin: 0;
+            background-color: #f0e6ff;
         }
         .video-container p {
-            margin-left: 20px;
+            padding: 15px;
+            margin: 0;
         }
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
-            max-width: 100%;
         }
         .video-wrapper iframe {
             position: absolute;
@@ -73,6 +89,34 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .social-icons a {
+            color: #800080;
+            font-size: 24px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #4b0082;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .video-container h2 {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -87,18 +131,17 @@
     </header>
 
     <main>
-       
         <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
             <h2 itemprop="name">BBC World News Interview, CoinCheck (2018): Online</h2>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/S3Cuhh6K00o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
-            <p itemprop="description">BBC World News inverviews Jeff McDonald about the Coincheck hack.</p>
+            <p itemprop="description">BBC World News interviews Jeff McDonald about the Coincheck hack.</p>
             <meta itemprop="uploadDate" content="2023-01-03T08:00:00+08:00">
             <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/S3Cuhh6K00o/0.jpg">
         </section>
-        
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
+
+         <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
             <h2 itemprop="name">Forbes Conference (2018): Moscow</h2>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/1tC7F1WP9qk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -267,87 +310,87 @@
             <meta itemprop="uploadDate" content="2023-01-13T08:00:00+08:00">
             <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/XcrYON5sFSk/0.jpg">
         </section>
-
+        
         <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
             <h2 itemprop="name">The LuxTag Official Rap Music Video (FUN AT WORK) (2019): CyberJaya</h2>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/z80eA98aRb0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
-            <p itemprop="description">LuxTag employees take a break away from work to have a little fun making an amateur rap vidoe with the LuxTag theme song.</p>
+            <p itemprop="description">LuxTag employees take a break away from work to have a little fun making an amateur rap video with the LuxTag theme song.</p>
             <meta itemprop="uploadDate" content="2023-01-14T08:00:00+08:00">
             <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/z80eA98aRb0/0.jpg">
         </section>
 
-        <div class="video-container">
+        <section class="video-container">
             <h2>Unboxing Chronoswiss & Tech Bureau Crypto-Watch - LuxTag (2018): Online</h2>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/hRBfTQDiScc" frameborder="0" allowfullscreen></iframe>
             </div>
             <p>In this video, LuxTag's Co-Founder Jeff McDonald unboxes his new Crypto-Watch. Jeff purchased one of Chronoswiss & Tech Bureau Crypto-Watches: the 002/101 Bitcoin-themed watch.</p>
-        </div>
+        </section>
 
-        <div class="video-container">
-            <h2>LoyalCoin Interview (2018): Manilla</h2>
+        <section class="video-container">
+            <h2>LoyalCoin Interview (2018): Manila</h2>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/sJYgn-fPXPM" frameborder="0" allowfullscreen></iframe>
             </div>
-            <p>Jeff is interviewed for the weekly LoyalCoin series in a mall in Manilla where using the blockchain to buy drinks from GongCha is demonstrated.</p>
-        </div>
+            <p>Jeff is interviewed for the weekly LoyalCoin series in a mall in Manila where using the blockchain to buy drinks from GongCha is demonstrated.</p>
+        </section>
 
-        <div class="video-container">
+        <section class="video-container">
             <h2>LuxTag deters counterfeits in a clever way (2019): CyberJaya</h2>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/W9PO9ZWPqSc" frameborder="0" allowfullscreen></iframe>
             </div>
-            <p>Jeff sits with LuxTag's Marketing Analyst, Kristina Aleshchenko to discuss how LuxTag's solution deters counterfeiting by using blockchain.Not only counterfeiting affects the luxury industry but it also impacts negatively a wide range of other sectors like clothing, pharmaceutical and education.</p>
-        </div>
+            <p>Jeff sits with LuxTag's Marketing Analyst, Kristina Aleshchenko to discuss how LuxTag's solution deters counterfeiting by using blockchain. Not only counterfeiting affects the luxury industry but it also impacts negatively a wide range of other sectors like clothing, pharmaceutical and education.</p>
+        </section>
             
-        <div class="video-container">
+        <section class="video-container">
             <h2>Crypto-Bit Brothers Interview (2017): Online</h2>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/d04O2FOU_Zs" frameborder="0" allowfullscreen></iframe>
             </div>
             <p>Interview with Jeff McDonald and the Crypto-Bit Brothers.</p>
-        </div>
+        </section>
 
-        <div class="video-container">
+        <section class="video-container">
             <h2>Token TV Interview (2018): Moscow</h2>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/bmUZWM2SK1A" frameborder="0" allowfullscreen></iframe>
             </div>
             <p>Jeff is interviewed by Token TV where he discusses the current state of blockchain technologies.</p>
-        </div>
+        </section>
 
-        <div class="video-container">
+        <section class="video-container">
             <h2>BGN - Blockchain Global News Interview with Jeff McDonald (2018): Las Vegas</h2>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/ZM3sVvgWoRA" frameborder="0" allowfullscreen></iframe>
             </div>
             <p>Jeff discusses his background and how he uses blockchain technology.</p>
-        </div>
-
+        </section>
     </main>
-        <footer>
-            <div class="social-icons">
-                <a href="https://twitter.com/theJabo38" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/unstoppable_jexy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/jeffmcdonald/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.facebook.com/jeff.t.mcdonald" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://github.com/jabo38/jabo38.github.io" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://en.wikipedia.org/wiki/User:Jeff.t.mcdonald" target="_blank" rel="noopener noreferrer" aria-label="Wikipedia"><i class="fab fa-wikipedia-w"></i></a>
-                <a href="#" id="email-link" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="http://jefftmcdonald.blogspot.com" target="_blank" rel="noopener noreferrer" aria-label="Blogspot"><i class="fab fa-blogger"></i></a>
-            </div>
-        </footer>
 
-        <script>
-            // Email protection script
-            document.getElementById('email-link').addEventListener('click', function(e) {
-                e.preventDefault();
-                var username = 'jeff';
-                var domain = 'jefftmcdonald.com';
-                window.location.href = 'mailto:' + username + '@' + domain;
-            });
-        </script>
+    <footer>
+        <div class="social-icons">
+            <a href="https://twitter.com/theJabo38" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/unstoppable_jexy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/jeffmcdonald/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/jeff.t.mcdonald" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/jabo38/jabo38.github.io" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://en.wikipedia.org/wiki/User:Jeff.t.mcdonald" target="_blank" rel="noopener noreferrer" aria-label="Wikipedia"><i class="fab fa-wikipedia-w"></i></a>
+            <a href="#" id="email-link" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="http://jefftmcdonald.blogspot.com" target="_blank" rel="noopener noreferrer" aria-label="Blogspot"><i class="fab fa-blogger"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Email protection script
+        document.getElementById('email-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            var username = 'jeff';
+            var domain = 'jefftmcdonald.com';
+            window.location.href = 'mailto:' + username + '@' + domain;
+        });
+    </script>
 </body>
 </html>
