@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -110,8 +110,111 @@
         </header>
 
        </section>
+
 <body>
-   
+    <h1>Apostille</h1>
+    <h2>A blockchain notarization and timestamping service with transferable, updatable, branded, and conjointly owned notarizations</h2>
+
+    <p><strong>Authors:</strong> J. McDonald, Assistant Professor, Keimyung University</p>
+    <p><strong>E-mail:</strong> jeff@nem.io</p>
+    <p><strong>J. Oliverio, NanoWallet Developer</strong></p>
+    <p><strong>Email:</strong> oliverio.j@outlook.com</p>
+    <p><strong>Date:</strong> January 15, 2017</p>
+    <p><strong>Version:</strong> 1.1</p>
+
+    <h2>Abstract</h2>
+    <p>Many timestamping services exist in one form or another in the blockchain sphere, but most of these are simple first generation systems for hashing a document to get its fingerprint and then timestamping that fingerprint in the blockchain with a transaction. These are one-off fixed transactions that have their reason to be culminating in being included in a block so that later they may be audited. These 1.0 timestamps are not updatable, cannot be transferred from one owner to another, and cannot have additional value and assets attached to the timestamp. Apostille, as the first 2.0 blockchain notarization service, solves these problems and offers a new set of features and business opportunities.</p>
+
+    <p>The Apostille system's key innovation is taking data which represents an underlying person, place, or thing and giving that data its own private key derived deterministically from its contents. This is used to create an account that represents the state of that object. These are dynamic accounts that can be used to prove authenticity, show ownership, and record updates, as well as be branded, transferable and conjointly owned.</p>
+
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#nem-features">NEM Features</a>
+            <ol>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#mosaics">Mosaics - Assets on the NEM Blockchain</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#multisig">Multisig Contracts</a></li>
+            </ol>
+        </li>
+        <li><a href="#apostille-system">The Apostille System</a>
+            <ol>
+                <li><a href="#preparing-account">Preparing the Initiating Blockchain Notarization Account</a></li>
+                <li><a href="#types">Types of Apostille Notarizations</a></li>
+                <li><a href="#dedicated-key">Making a File's Dedicated Private Key - Coloring HD Accounts - Creating an Apostille Account</a></li>
+                <li><a href="#hashes">Apostille Hashes - Preparing the Timestamp Fingerprint - Making the Blockchain Notarization</a></li>
+                <li><a href="#differences">Differences of Hashes</a></li>
+                <li><a href="#auditing">Auditing Blockchain Notarizations</a></li>
+                <li><a href="#transferring">Transferring Control of a Blockchain Notarization's Colored HD Account</a></li>
+                <li><a href="#updating">Updating a Blockchain Notarization</a></li>
+                <li><a href="#multiple-party">Making Multiple Party Contract Notarizations - Initiated, Signed, Updated, Controlled, and Transferred by Multiple Parties</a></li>
+                <li><a href="#private-public">Private and Public Chains - Apostille for Mijin</a></li>
+            </ol>
+        </li>
+        <li><a href="#use-cases">Uses Cases</a>
+            <ol>
+                <li><a href="#car-title">Car Title</a></li>
+                <li><a href="#government-registration">Government Registration</a></li>
+                <li><a href="#digital-media">Digital Media Licenses</a></li>
+                <li><a href="#luxury-goods">Luxury Consumer Goods and Anti-Counterfeiting</a></li>
+                <li><a href="#legal-contracts">Two-Party Legal Contracts</a></li>
+                <li><a href="#custom-cases">Custom Use Cases</a></li>
+            </ol>
+        </li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#acknowledgements">Acknowledgements</a></li>
+        <li><a href="#bibliography">Bibliography</a></li>
+    </ol>
+
+    <h2 id="introduction">1. Introduction</h2>
+    <p>The idea of timestamping documents to prove they existed and were in one's possession has been around since long before the blockchain, but with the invention of Bitcoin, many have seen the blockchain as a natural fit for this service taking advantage of the blockchain's usefulness as an open and auditable timestamped ledger.</p>
+
+    <p>Timestamping the hashed fingerprint of a document into the blockchain has come to be known as proof-of-existence (PoE). One of the first and most recognized services is <a href="https://proofofexistence.com/">proofofexistence.com</a>, which is an open source website started in 2012. Users can drag and drop their document and get a hash representing the document's digital fingerprint that can then be stamped in the Bitcoin blockchain. Since PoE's start many other services have arisen, some with small improvements or cheaper fees have emerged, but these more or less rely on the same formula. These are one-time timestamping processes where a person uploads a document and stamps it in a blockchain. That is the limit of their utility.</p>
+
+    <p>Outside of blockchain technology, traditionally, legal notaries have verified and stamped paper documents to notarize their authenticity. These notaries gain their authority because they are registered and backed by the governments of the world. But since the invention of the blockchain, one can think of timestamping fingerprints of documents in the blockchain as a type of "blockchain notarization"; one not back by political authority, but instead by the blockchain's decentralized network and underlying technology.</p>
+
+    <p>The existing legal certification and notary systems backed by the governments and traditional organizations of the world offer many use cases for verifying an object's status. These include certificates of property ownership (e.g. car titles), certificates of achievement (e.g. diplomas, life event certificates), verification of witness (e.g., notary public), verification of a product quality (e.g. "Grade A" certification), etc.</p>
+
+    <p>These existing systems offer qualities to their certificates like being verifiable, witnessed, quality controlled by 2nd and 3rd parties, to be registered with official organizations, transferability, updatability, etc.</p>
+
+    <p>The Apostille system looks to add these properties which only previously existed outside of blockchains, to within a blockchain ecosystem. This is the logical next step forward in blockchain technology and is where the idea of transferable value within a blockchain system, e.g. cryptocurrency, and timestamping documents combine to bring the best features of both into one system.</p>
+
+    <p>Apostille seeks to do this by taking advantage of a naming service, multisignature accounts, messages, and blockchain assets. These can be found on a blockchain like Bitcoin but will need to incorporate different integrations and APIs of various projects, some of which are centralized; projects like Onename for the naming service, Bitpay for multisig, CounterParty and Colored Coins for assets, and the <a href="https://bitcoin.org/en/release/v0.9.0#opreturn-and-data-in-the-block-chain">OP_RETURN</a> field of a Bitcoin transaction for messaging. Alternatively, a better solution is for one to explore the option of Ethereum and write a smart contract attempting to replicate these features, but this too could prove to be challenging due the the complexity and risks in writing smart contracts. Instead, one 2.0 blockchain, NEM, offers all of these services by default with one universal API, so we will discuss using it as an example.</p>
+
+    <p>The name "<a href="http://www.thefreedictionary.com/Apostille">Apostille</a>" comes from the French word of the same spelling meaning <em>to certify, authenticate, or complete</em>. The French word derives its meaning from the Latin use of "post" meaning <em>after</em>, and the use of "illa" meaning <em>these</em>, and "verba" meaning <em>words</em>. At its root then we can say it means <em>after these words</em>.</p>
+
+    <p>The term was popularized during the <a href="https://en.wikipedia.org/wiki/Apostille_Convention">Apostille Convention</a> held under the Hague Convention in 1961 and signed by 112 countries making a system for international notarizations. The NEM blockchain is an international and decentralized technology and as so brings a new twist to the idea of an apostille. NEM Apostille transactions are not traditional legal notarizations endorsed and enforced by political entities and treaties, but instead are "blockchain notarizations" made on an internationally supported blockchain secured and enforced by computer code and cryptography.</p>
+
+    <h2 id="nem-features">2. NEM Features</h2>
+    <p>The NEM blockchain is a 2.0 platform written from scratch. It was designed by professional enterprise-level developers to be a reboot of what an ideal blockchain should be. Because of this, how NEM works, and to fully understand how Apostille works, it is important to introduce NEM technology, which is in many ways fundamentally different from other blockchains. A more in-depth technical explanation of NEM technology can be found in the <a href="https://www.nem.io/NEM_techRef.pdf">Technical Report</a>.</p>
+
+    <h3 id="namespaces">2.1. Namespaces</h3>
+    <p><a href="http://blog.nem.io/mosaics-and-namespaces-2/">Namespaces</a> on the NEM system is a domain naming system, but one both like and unlike that of the internet. There are unique root-level domains and non-unique subdomains, typically used to classify fully qualified unique assets or naming systems. This allows one person with one unique root domain to create many different subdomains for their various projects or outside business accounts. It also helps to build and maintain a reputation system for services built on registered names. One such example is the blockchain supported NEM digital asset feature, named Mosaics, but others could be any third-party distributed naming systems an app builder would like to make.</p>
+
+    <p>This is useful in the Apostille system because it creates a system of authority and power and now a user can trust a blockchain notarization made from a legitimate and registered company. NEM's namespaces enable, for instance, one to own the namespace "foo company" and now no other person can claim that root domain. Blockchain notarizations published from that namespace can be trusted to have come from the real "foo company". This is useful, for example, with luxury good makers making certificates of authenticity on the blockchain for luxury items. Now, the certificate can be trusted because the manufacturer of the certificate can be clearly known from things like publishing their namespace on their website and packaging information. It is also useful for things like governments registering citizen identification on the blockchain. If those registrations are approved of by the official and unique namespace domain of that country, one can think of it as an officially endorsed blockchain ID.</p>
+
+    <h3 id="mosaics">2.2. Mosaics - Assets on the NEM Blockchain</h3>
+    <p><a href="http://blog.nem.io/mosaics-and-namespaces-2/">Mosaics</a> in NEM are essentially named assets inherent in the NEM blockchain, and not on a 2nd party layer. They can represent any kind of asset that a company, such as "foo company", would like to issue. They have customizable names, descriptions, divisibility, quantities as either fixed or mutable, and transferability restrictions if necessary, and can have levies applied to them or be levies themselves on other mosaics.</p>
+
+    <p>So not only can "foo company" make notarizations but can actually attach any kind of asset to the blockchain notarization they might wish. Governments might want to make a "taxes paid" or "registered citizen" mosaic asset. Private companies might want to make a "good for a redeemable amount of money" or "share of company" asset and pair it with a notarized contract.</p>
+
+    <p>This is useful in the Apostille system because now many different third parties can customize, brand, and attach mosaic assets that are digital representations of value or status to a blockchain notarization.</p>
+
+    <h3 id="messages">2.3. Messages</h3>
+    <p><a href="https://www.nem.io/NEM_techRef.pdf#section.3">Messages</a> in NEM come in three flavors: open, encrypted, and hex. They can be of any length up to 320 characters (272 encrypted), and messages can be strung together if needed.</p>
+
+    <p>This is useful in Apostille because after a blockchain notarization is made, messages on the blockchain can record updates and augmentations to the file and the person, place, or thing it represents. Additionally, they could be used as plain text descriptions, or links to additional information about the notarized content. These may need to be public, or private, or possibly written in hex as part of the backend of an application.</p>
+
+    <h3 id="multisig">2.4. Multisig Contracts</h3>
+    <p><a href="https://www.nem.io/NEM_techRef.pdf#subsection.4.3">Multisignature</a> and multiuser accounts play an important and critical role in the Apostille system. Although other blockchain's multisignature solutions resemble NEM's multisignature accounts on the surface, there are subtle differences that set NEM apart. It is some of these differences that allow us to easily create the Apostille solution on NEM.</p>
+
+    <p>NEM's multisig works by on-chain contracts. Unlike other blockchain solutions, the multisig account is not created by combining public keys from other accounts. Instead, a pre-existing and funded address is converted into a multisignature account and the cosignatories are assigned to it. The cosignatories can be assigned in any m-of-n combination where both the <em>m</em> and <em>n</em> can be any number of 1-32; this includes 1-of-1 multisignature contracts which are important in Apostille.</p>
+
+    <p>A 1-of-1 multisignature account is possible in NEM as the account being turned into a multisig account has its private key nullified; meaning, it no longer has any power to initiate transactions. Only a cosignatory's private key can initiate transactions on the multisigged account's behalf. It is therefore that accounts in NEM's multisig implementation can be analogously thought of as parent/child accounts, where the parent accounts are the cosignatories and can make the child account make any transaction.</p>
+
+    <p>This is useful in the Apostille system because now a dedicated account representing a blockchain notarization can receive messages to update the blockchain notarization, and can receive assets/mosaics sent to the dedicated account locking in value or   
+<body>
 
     <footer>
         <div class="social-icons">
