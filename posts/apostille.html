@@ -241,8 +241,6 @@
 
     <p><em>HDprivateKey = truncate(userKeyPair.sign(SHA256(fileName)));</em></p>
 
-    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure5.png" alt="Process to create a colored HD account">
-    <p><em>Figure 5. The process to create a colored HD account (Apostille account) from a document's name and account information which in turn make up its dedicated private key.</em></p>
     <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure5.png" alt="Figure 5. The process to create a colored HD account (Apostille account) from a document's name and account information which in turn make up its dedicated private key." style="max-width: 100%; height: auto;">    <p><em>Figure 5. The process to create a colored HD account (Apostille account) from a document's name and account information which in turn make up its dedicated private key.</em></p>
 
     <h3 id="hashes">3.4. Apostille Hashes - Preparing the Timestamp Fingerprint - Making the Blockchain Notarization</h3>
@@ -251,13 +249,11 @@
 
     <p><em>ApostilleHash = Apostille header + fileContentHash;</em></p>
 
-    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure6.png" alt="Apostille process for creating an Apostille transaction message">
-    <p><em>Figure 6. The Apostille process for creating an Apostille transaction message. The document's fingerprint plus Apostille header are sent in a message to a dedicated HD account.</em></p>
+    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure6.png" alt="Figure 6. The Apostille process for creating an Apostille transaction message. The document's fingerprint plus Apostille header are sent in a message to a dedicated HD account." style="max-width: 100%; height: auto;">    <p><em>Figure 6. The Apostille process for creating an Apostille transaction message. The document's fingerprint plus Apostille header are sent in a message to a dedicated HD account.</em></p>
 
     <p>The whole process then, of making a private Apostille blockchain notarization and creating the Apostille account, can be seen as the following:</p>
 
-    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure7.png" alt="Apostille process for creating a document's private key">
-    <p><em>Figure 7. The Apostille process for creating a document's private key, the dedicated HD account from that key, and the fingerprint of the original document that is sent to the dedicated HD account. Since it has been timestamped in the blockchain, it is now an Apostille blockchain notarization account.</em></p>
+    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure7.png" alt="Figure 7. The Apostille process for creating a document's private key, the dedicated HD account from that key, and the fingerprint of the original document that is sent to the dedicated HD account. Since it has been timestamped in the blockchain, it is now an Apostille blockchain notarization account." style="max-width: 100%; height: auto;">    <p><em>Figure 7. The Apostille process for creating a document's private key, the dedicated HD account from that key, and the fingerprint of the original document that is sent to the dedicated HD account. Since it has been timestamped in the blockchain, it is now an Apostille blockchain notarization account.</em></p>
 
     <h2 id="differences">3.5. Differences of Hashes</h2>
 
@@ -333,14 +329,11 @@
 
     <p>NEM's multisig contracts can be made and edited in only a few clicks, and are supported by all wallets within the NEM system as they all use the same core API from NEM's blockchain servers. Likewise, to remove oneself and add another account as the parent/owner account of the colored HD account takes only a few clicks and can be done in a single transaction. No information need be exchanged with the new owner of the blockchain notarization account except knowing their account address. No smart contracts need be written, or special third party wallets used.</p>
 
-    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure8.png" alt="Notarization account creation">
-    <p><em>Figure 8: In this diagram, we can see that the notarization account has been made and stamped with a file's fingerprint hash. The file's dedicated private key was used to make Account N, but at this point, there is no multisig contract over it.</em></p>
+    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure8.png" alt="Figure 8: In this diagram, we can see that the notarization account has been made and stamped with a file's fingerprint hash. The file's dedicated private key was used to make Account N, but at this point, there is no multisig contract over it." style="max-width: 100%; height: auto;">    <p><em>Figure 8: In this diagram, we can see that the notarization account has been made and stamped with a file's fingerprint hash. The file's dedicated private key was used to make Account N, but at this point, there is no multisig contract over it.</em></p>
 
-    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure9.png" alt="Multisig contract creation">
-    <p><em>Figure 9: In this diagram, we can see that Account N has now been put under a 1-of-1 multisig contract. Alice now has full control of the notarization account, and the notarization account's private key is no longer allowed to initiate transactions.</em></p>
+    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure9.png" alt="Figure 9: In this diagram, we can see that Account N has now been put under a 1-of-1 multisig contract. Alice now has full control of the notarization account, and the notarization account's private key is no longer allowed to initiate transactions." style="max-width: 100%; height: auto;">    <p><em>Figure 9: In this diagram, we can see that Account N has now been put under a 1-of-1 multisig contract. Alice now has full control of the notarization account, and the notarization account's private key is no longer allowed to initiate transactions.</em></p>
 
-    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure10.png" alt="Transferring control of Account N">
-    <p><em>Figure 10: In this diagram, Alice has decided to transfer control of Account N to Bob. In a single transaction with a few clicks, she can remove herself and add Bob. Bob now has full control of Account N.</em></p>
+    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure10.png" alt="Figure 10: In this diagram, Alice has decided to transfer control of Account N to Bob. In a single transaction with a few clicks, she can remove herself and add Bob. Bob now has full control of Account N." style="max-width: 100%; height: auto;">    <p><em>Figure 10: In this diagram, Alice has decided to transfer control of Account N to Bob. In a single transaction with a few clicks, she can remove herself and add Bob. Bob now has full control of Account N.</em></p>
 
     <h2 id="updating">3.8. Updating a Blockchain Notarization</h2>
 
@@ -368,13 +361,12 @@
 
     <p>At the time of this paper, the current enterprise release of Mijin is running at 100's tx/s, and the next generation update of the Mijin/NEM core codenamed "Catapult" is currently running at more than 4000's tx/s on its private chain testnet. It is the first four-tiered blockchain technology utilizing microservices architecture, having one tier for the blockchain, one for API servers, one for MongoDB, and one for light clients, making it scale well beyond any other blockchain project. Catapult is the first and currently only blockchain to apply this common cloud scaling architecture to a blockchain system and marks a sharp shift from Bitcoin's monolithic architecture.</p>
 
-    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure11.png" alt="Catapult blockchain representation">
-    <p><em>Figure 11. A representation of the Catapult blockchain.</em></p>
+    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure11.png" alt="Figure 11. A representation of the Catapult blockchain." style="max-width: 100%; height: auto;">    <p><em>Figure 11. A representation of the Catapult blockchain.</em></p>
 
     <p>Mijin private chains used for Apostille notarizations can also be anchored to the NEM public chain. This is a process by which a hash of the Mijin chain or its recent block header is itself notarized on the NEM public chain. This gives users and auditors of the Mijin chain and the blockchain notarizations within it nearly the same level of assurance of immutability as having used the public chain directly.</p>
 
-    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure12.png" alt="Mijin and NEM blockchain networks">
-    <p><em>Figure 12: The Mijin and NEM blockchain networks using the NEM Apostille notarization system.</em></p>
+    <img src="https://raw.githubusercontent.com/jabo38/jabo38.github.io/main/images/apostille/figure12.png" alt="Figure 12: The Mijin and NEM blockchain networks using the NEM Apostille notarization system." style="max-width: 100%; height: auto;">    <p><em>Figure 12: The Mijin and NEM blockchain networks using the NEM Apostille notarization system.</em></p>
+
  <h1 id="use-cases">4. Uses Cases</h1>
     
     <p>The following are use cases made to show the utility and range of Apostille accounts and notarizations.</p>
