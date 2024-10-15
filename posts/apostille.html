@@ -271,6 +271,124 @@
     <img src="/api/placeholder/550/255" alt="Apostille process for creating a document's private key">
     <p><em>Figure 7. The Apostille process for creating a document's private key, the dedicated HD account from that key, and the fingerprint of the original document that is sent to the dedicated HD account. Since it has been timestamped in the blockchain, it is now an Apostille blockchain notarization account.</em></p>
 
+    <h2>3.5. Differences of Hashes</h2>
+
+    <p>Apostille allows users to pick from two different options when making a blockchain notarization. These options are 1) <em>public sync,</em> or, 2) <em>private, transferable, and updatable</em>. Additionally, a user can further choose from a list of hashing algorithms. The user's choices will result in the various kinds of hashes shown below.</p>
+
+    <h3>Non-signed (public sync):</h3>
+    <ul>
+        <li><code>0xFE 'N' 'T' 'Y' 0x01 + md5(data)</code></li>
+        <li><code>0xFE 'N' 'T' 'Y' 0x02 + sha-1(data)</code></li>
+        <li><code>0xFE 'N' 'T' 'Y' 0x03 + sha-256(data)</code></li>
+        <li><code>0xFE 'N' 'T' 'Y' 0x08 + sha3-256(data)</code></li>
+        <li><code>0xFE 'N' 'T' 'Y' 0x09 + sha3-512(data)</code></li>
+    </ul>
+
+    <h3>Signed (private, transferable, and updatable):</h3>
+    <ul>
+        <li><code>0xFE 'N' 'T' 'Y' 0x81 + sign(md5(data))</code></li>
+        <li><code>0xFE 'N' 'T' 'Y' 0x82 + sign(sha-1(data))</code></li>
+        <li><code>0xFE 'N' 'T' 'Y' 0x83 + sign(sha-256(data))</code></li>
+        <li><code>0xFE 'N' 'T' 'Y' 0x88 + sign(sha3-256(data))</code></li>
+        <li><code>0xFE 'N' 'T' 'Y' 0x89 + sign(sha3-512(data))</code></li>
+    </ul>
+
+    <p>We start a hash with 0xFE for the NEM network to interpret the message as HEX</p>
+
+    <p>N, T and Y are for "Notary"; those letters are converted to hexadecimal represented as the magic bytes below:</p>
+
+    <ul>
+        <li>N: <code>0x4E</code></li>
+        <li>T: <code>0x54</code></li>
+        <li>Y: <code>0x59</code></li>
+    </ul>
+
+    <p>The common Apostille header for both types is FE4E5459; the two last hex characters of the header are defined by the user's choices (hashing method and signed or not).</p>
+
+    <p>For example:</p>
+    <ul>
+        <li>The header for a non-signed file hash using SHA-256 is <code>FE4E545903</code>.</li>
+        <li>The header for a signed file hash using MD5 is <code>FE4E545981</code>.</li>
+    </ul>
+
+    <p>Signed SHA-256 file hash example:<br>
+    <code>79952024fa6fd302abda4dfef63b1499b786c4269305bbf08d4058b417a528421d4f877c5a00d34e2addeba650b23812777448f2226515c801e4a424eefa6e04</code></p>
+
+    <p>Now with added Apostille header example:<br>
+    <code>fe4e54598379952024fa6fd302abda4dfef63b1499b786c4269305bbf08d4058b417a528421d4f877c5a00d34e2addeba650b23812777448f2226515c801e4a424eefa6e04</code></p>
+
+    <h2>3.6. Auditing Blockchain Notarizations</h2>
+
+    <p>To audit a file, we need to have the notarized document with a filename in a particular naming format. Documents that go through an Apostille blockchain notarization process will have their file name edited and pushed back to the user in a zipped folder that they may store it securely without editing it. The special naming format is as follows:</p>
+
+    <p><code>&lt;Filename&gt; - Apostille TX &lt;transaction hash&gt; -- Date YYYY-MM-DD.pdf</code></p>
+
+    <p>Original document file name example: <code>MyProject2016.pdf</code></p>
+
+    <p>Hashed document file name example: <code>MyProject2016 - Apostille TX 0e94da29910ae64bb544e9de0e6a5c6440bd75e6bedafd81b5b4cf729ca25ef -- Date 2016-09-12.pdf</code></p>
+
+    <p>When a user uploads the file to audit, the name is parsed and the blockchain notarization transaction is retrieved from the blockchain using the transaction hash.</p>
+
+    <p>We take the message in that transaction, cut the Apostille header and analyze it.</p>
+
+    <p>With the information from the header, we can know what algorithm the user selected for the Apostille notarization. So we can then hash the audited file with the right hashing method and look in the blockchain if it matches the transaction's message hash (without the header).</p>
+
+    <p>If the hash is non-signed as is the case with a <em>public</em> notarization, we simply verify that the uploaded file hash matches the one in the transaction message.</p>
+
+    <p>If the hash is signed as with the case with a <em>private, updatable, and transferable</em> notarization, we verify the signature using the signer's public key, the signed file hash (in the transaction message) and the hash of the uploaded file.</p>
+
+    <h2>3.7. Transferring Control of a Blockchain Notarization's Colored HD Account</h2>
+
+    <p>Since the notarized file's dedicated private key for its colored HD account (Apostille account) is only known by the maker of the blockchain notarization, the owner can freely turn that account into a 1-of-1 multisignature account, or any other combination of m-of-n they so choose.</p>
+
+    <p>A 1-of-1 multisignature contract is most convenient if a maker of the blockchain notarization wants sole ownership and wants to pass it to another singular 3rd party. A multisignature account of m-of-n, where <em>m and n</em> is greater than two, is useful for contracts that need to be conjointly owned, or shared, or when binding an agreement between multiple parties, or all of these.</p>
+
+    <p>NEM's multisig contracts can be made and edited in only a few clicks, and are supported by all wallets within the NEM system as they all use the same core API from NEM's blockchain servers. Likewise, to remove oneself and add another account as the parent/owner account of the colored HD account takes only a few clicks and can be done in a single transaction. No information need be exchanged with the new owner of the blockchain notarization account except knowing their account address. No smart contracts need be written, or special third party wallets used.</p>
+
+    <img src="/api/placeholder/428/319" alt="Notarization account creation">
+    <p><em>Figure 8: In this diagram, we can see that the notarization account has been made and stamped with a file's fingerprint hash. The file's dedicated private key was used to make Account N, but at this point, there is no multisig contract over it.</em></p>
+
+    <img src="/api/placeholder/444/342" alt="Multisig contract creation">
+    <p><em>Figure 9: In this diagram, we can see that Account N has now been put under a 1-of-1 multisig contract. Alice now has full control of the notarization account, and the notarization account's private key is no longer allowed to initiate transactions.</em></p>
+
+    <img src="/api/placeholder/440/323" alt="Transferring control of Account N">
+    <p><em>Figure 10: In this diagram, Alice has decided to transfer control of Account N to Bob. In a single transaction with a few clicks, she can remove herself and add Bob. Bob now has full control of Account N.</em></p>
+
+    <h2>3.8. Updating a Blockchain Notarization</h2>
+
+    <p>There are two ways a blockchain notarization can be updated. The first case is for an entirely new version of the document to be notarized by rehashing it and putting its new fingerprint on the blockchain. The second case is to amend the original notarization by sending messages/memos to the Apostille account. The latter case is also good for use cases where additional notes need to be recorded on an ongoing basis about the notarized product.</p>
+
+    <p>Sometimes documents or products change after they have been certified. If an item that is notarized is augmented, messages can be sent to the Apostille account reflecting any changes.</p>
+
+    <p>In some cases, registered and certified third parties that are neither the creator nor owner of the object might augment it and want to record their changes. They can then send messages to the Apostille account from their account reflecting their work. In an ideal situation the third party's account would be registered with a namespace to help with reputation, but this is optional.</p>
+
+    <h2>3.9 Making Multiple Party Contract Notarizations - Initiated, Signed, Updated, Controlled, and Transferred by Multiple Parties</h2>
+
+    <p>One obvious use case of a blockchain notarization system is to have multiple parties make a multisig account together and then make contract together, jointly sign it and jointly upload its fingerprint onto the blockchain to that contract's Apostille account from their shared multisig account. This acts as proof that all parties agreed to the contract at the time it was signed.</p>
+
+    <p>The most elegant solution is for each party to own their own unique namespace, so that they may sign the contract with a registered account, but that is not a requirement.</p>
+
+    <p>Whether or not namespaces are used, the process is the same. All parties agreeing to a contract make a multisig contract over an account that will be used to initiate the Apostille transaction. That account will be under an n-of-n contract, and therefore any blockchain notarization coming from it must be signed by all parties. In NEM, this is done with push notifications via the blockchain network sent to light clients asking them if they want to sign.</p>
+
+    <p>The Apostille account that is created from this Apostille transaction will initially be just like any other regular account, but since the notarized file's dedicated private key will be known, the Apostille account can be put in multisig with the proper owners of it as cosigners.</p>
+
+    <p>These cosigners can then update, augment and renew the contract on chain by having all of them sign transactions over that Apostille account.</p>
+
+    <h2>3.10 Private and Public Chains - Apostille for Mijin</h2>
+
+    <p>Thus far this paper has mainly discussed using Apostille with the NEM public chain. But NEM has a sister blockchain technology, the private blockchain Mijin run by Tech Bureau. While Mijin and NEM are designed to meet different needs, they share much of the same underlying code and all of the same APIs. This makes any application running NEM Apostille capable of running on Mijin with very little effort in updating the code.</p>
+
+    <p>At the time of this paper, the current enterprise release of Mijin is running at 100's tx/s, and the next generation update of the Mijin/NEM core codenamed "Catapult" is currently running at more than 4000's tx/s on its private chain testnet. It is the first four-tiered blockchain technology utilizing microservices architecture, having one tier for the blockchain, one for API servers, one for MongoDB, and one for light clients, making it scale well beyond any other blockchain project. Catapult is the first and currently only blockchain to apply this common cloud scaling architecture to a blockchain system and marks a sharp shift from Bitcoin's monolithic architecture.</p>
+
+    <img src="/api/placeholder/550/340" alt="Catapult blockchain representation">
+    <p><em>Figure 11. A representation of the Catapult blockchain.</em></p>
+
+    <p>Mijin private chains used for Apostille notarizations can also be anchored to the NEM public chain. This is a process by which a hash of the Mijin chain or its recent block header is itself notarized on the NEM public chain. This gives users and auditors of the Mijin chain and the blockchain notarizations within it nearly the same level of assurance of immutability as having used the public chain directly.</p>
+
+    <img src="/api/placeholder/550/426" alt="Mijin and NEM blockchain networks">
+    <p><em>Figure 12: The Mijin and NEM blockchain networks using the NEM Apostille notarization system.</em></p>
+
+
 
 
 </body>
