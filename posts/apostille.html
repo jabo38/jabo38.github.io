@@ -214,7 +214,69 @@
     <p>A 1-of-1 multisignature account is possible in NEM as the account being turned into a multisig account has its private key nullified; meaning, it no longer has any power to initiate transactions. Only a cosignatory's private key can initiate transactions on the multisigged account's behalf. It is therefore that accounts in NEM's multisig implementation can be analogously thought of as parent/child accounts, where the parent accounts are the cosignatories and can make the child account make any transaction.</p>
 
     <p>This is useful in the Apostille system because now a dedicated account representing a blockchain notarization can receive messages to update the blockchain notarization, and can receive assets/mosaics sent to the dedicated account locking in value or adding status to the blockchain notarization. But the other subtle yet critical utility about NEM’s multisignature solution is that, the dedicated blockchain notarization account be transferred from person to person. This means that the account is no longer “just an account” but instead is a certification account representing the state of the underlying content it is linked. We call these certification accounts “Apostille accounts”.</p>   
-<body>
+
+
+    <h4>3. The Apostille System</h4>
+
+    <p>As one can gather from reading this paper thus far Apostille takes advantage of many different features to make a holistic blockchain notarization system, one in which notarizations are not static one-time timestamps, but instead can now be dynamic, moving, changing, and updatable values on the blockchain. Companies or applications using and customizing this service have an opportunity to make well-defined application framework conventions of how their Apostille accounts are made and interact with the authority given by namespaces, the value and status represented by digital assets sent to that account, and the information sent as memos.</p>
+
+    <img src="/api/placeholder/550/300" alt="Overview of the Apostille system framework and Apostille account creation">
+    <p><em>Figure 4. Overview of the Apostille system framework and Apostille account creation.</em></p>
+
+    <p>If one is familiarized with the Colored Coin system in Bitcoin, then it becomes easier to understand the Apostille system. In Bitcoin, a colored coin is created by taking a Satoshi and tagging it with a value such as "car title" and then transferring that Satoshi around the blockchain making sure to track it and link it back to the time it was colored. In this situation, we can be considering to "color" the Satoshi with the designation of "car title". And while it is a visionary concept, it unfortunately, is built as a 2nd layer which is taxing for most Bitcoin organizations and wallets to implement. Furthermore such schemes usually require using the OP_RETURN, which is possible to use, but is something the Bitcoin Core developers have stated is a bad idea in version 0.9.0.</p>
+
+    <p>The NEM Apostille system proposes the same concept, but instead of applying it to a Satoshi, it applies it to an account created from a private key derived from the data being notarized. <strong>These accounts can even be thought of as "colored accounts" which are far more suited and useful for tokenizing data value sets, and can signify anything a creator might want to represent, transfer, and update.</strong> Bitcoins simply were not meant to be colored with information in the first place. Bitcoin was designed as "A Peer-to-Peer Electronic Cash System", emphasis in this case on a fungible "cash", not a peer-to-peer electronic <em>customized asset and message</em> exchanging system.</p>
+
+    <p>On the other hand, accounts on the NEM blockchain are designed by default to hold messages, hold mosaics (digital assets), and are designed to have control transferable from person to person via multisig contracts. They were built from the ground up to be much more than just an address. And because this all happens with APIs supported natively by the NEM blockchain servers, it is universal across the NEM blockchain ecosystem and all NEM wallets. No third party APIs are needed. Furthermore, the use of account states in NEM and the absence of Unspent Transaction Outputs (UTXO-inherent in Bitcoin) makes this possible. A UTXO system with a single native coin, allows for one common framework convention to take place, that of a single fungible coin and via the OP_RETURN, roundabout add ins. <strong>A blockchain platform like NEM with acount states and customizable namespaces, mosaic assets, multisig contracts, and messaging options allows for a wide variety of application framework conventions to take place, Apostille being just one example.</strong></p>
+
+    <h5>3.1. Preparing the Initiating Blockchain Notarization Account</h5>
+
+    <p>While any account can initiate a blockchain notarization, it is preferably one that has a namespace and has published that namespace in their company information profile within their website, brochure, package information, etc. This is optional and is <em>not</em> a requirement but helps to bring legitimacy to a blockchain notarization especially when a consumer can deduce, "I trust this company, and only this company can use this namespace domain; therefore I trust the blockchain notarization made by this namespace domain to be an official blockchain notarization for this kind of product".</p>
+
+    <h6>3.2. Types of Apostille Notarizations</h6>
+
+    <p>The Apostille system allows a person to choose from two different kinds of notarizations depending on their business use case and privacy needs.</p>
+
+    <ul>
+        <li><em>Public Sync:</em> Plain hashes are sent to a public synk address. This is useful for cases where a document that has been fingerprinted and stamped is meant to be shared freely.</li>
+        <li><em>Private, Transferable and Updatable:</em> Hashes are signed using the owner's private key and sent to a colored HD account (Apostille account) created from a file's dedicated private key. This is useful for cases where the contents of the notarized document should remain more private, or when a person would like to make a blockchain notarization that is updatable, transferable, conjointly owned, or hold extra value.</li>
+    </ul>
+
+    <h7>3.3. Making a File's Dedicated Private Key - Coloring HD Accounts - Creating an Apostille Account</h7>
+
+    <p>A hierarchical deterministic (HD) account is generated from the file name, which is hashed using SHA-256 and then signed with user's private key.</p>
+
+    <p>The final signed hash is truncated to keep the first 64 characters that are now allocated to be the file's dedicated private key. Since the file's private key is created from a hashed filename, it will always be unique per each sender and can be thought of as the file's personal private key, not just as a random account's private key. When creating an HD account with a file's dedicated private key, we can consider that account to be "colored" and now be an Apostille account. For example, if one were to make a blockchain notarization for a car title, the color of the HD account in this case would be "car title".</p>
+
+    <p>Only the owner of the initiating account and file can retrieve the file's dedicated private key that makes the colored HD account, and it will always generate the same account for a given file name.</p>
+
+    <p>The formula is as follows:</p>
+
+    <p><em>HDprivateKey = truncate(userKeyPair.sign(SHA256(fileName)));</em></p>
+
+    <img src="/api/placeholder/416/305" alt="Process to create a colored HD account">
+    <p><em>Figure 5. The process to create a colored HD account (Apostille account) from a document's name and account information which in turn make up its dedicated private key.</em></p>
+
+    <h8>3.4. Apostille Hashes - Preparing the Timestamp Fingerprint - Making the Blockchain Notarization</h8>
+
+    <p>An Apostille transaction message is the hash of the file data (document fingerprint) prepended with a custom Apostille hash header that begins with 4 byte magic bytes. The Apostille header helps us during an audit to determine the hashing algorithm used and if the hash was signed or not. Shown as follows:</p>
+
+    <p><em>ApostilleHash = Apostille header + fileContentHash;</em></p>
+
+    <img src="/api/placeholder/396/269" alt="Apostille process for creating an Apostille transaction message">
+    <p><em>Figure 6. The Apostille process for creating an Apostille transaction message. The document's fingerprint plus Apostille header are sent in a message to a dedicated HD account.</em></p>
+
+    <p>The whole process then, of making a private Apostille blockchain notarization and creating the Apostille account, can be seen as the following:</p>
+
+    <img src="/api/placeholder/550/255" alt="Apostille process for creating a document's private key">
+    <p><em>Figure 7. The Apostille process for creating a document's private key, the dedicated HD account from that key, and the fingerprint of the original document that is sent to the dedicated HD account. Since it has been timestamped in the blockchain, it is now an Apostille blockchain notarization account.</em></p>
+
+
+
+</body>
+</html>
+    
+    <body>
 
     <footer>
         <div class="social-icons">
