@@ -214,11 +214,11 @@
 
     <p>On the other hand, accounts on the NEM blockchain are designed by default to hold messages, hold mosaics (digital assets), and are designed to have control transferable from person to person via multisig contracts. They were built from the ground up to be much more than just an address. And because this all happens with APIs supported natively by the NEM blockchain servers, it is universal across the NEM blockchain ecosystem and all NEM wallets. No third party APIs are needed. Furthermore, the use of account states in NEM and the absence of Unspent Transaction Outputs (UTXO-inherent in Bitcoin) makes this possible. A UTXO system with a single native coin, allows for one common framework convention to take place, that of a single fungible coin and via the OP_RETURN, roundabout add ins. <strong>A blockchain platform like NEM with acount states and customizable namespaces, mosaic assets, multisig contracts, and messaging options allows for a wide variety of application framework conventions to take place, Apostille being just one example.</strong></p>
 
-    <h3>3.1. Preparing the Initiating Blockchain Notarization Account</h3>
+    <h3 id="preparing-account">3.1. Preparing the Initiating Blockchain Notarization Account</h3>
 
     <p>While any account can initiate a blockchain notarization, it is preferably one that has a namespace and has published that namespace in their company information profile within their website, brochure, package information, etc. This is optional and is <em>not</em> a requirement but helps to bring legitimacy to a blockchain notarization especially when a consumer can deduce, "I trust this company, and only this company can use this namespace domain; therefore I trust the blockchain notarization made by this namespace domain to be an official blockchain notarization for this kind of product".</p>
 
-    <h3>3.2. Types of Apostille Notarizations</h3>
+    <h3 id="types">3.2. Types of Apostille Notarizations</h3>
 
     <p>The Apostille system allows a person to choose from two different kinds of notarizations depending on their business use case and privacy needs.</p>
 
@@ -227,7 +227,7 @@
         <li><em>Private, Transferable and Updatable:</em> Hashes are signed using the owner's private key and sent to a colored HD account (Apostille account) created from a file's dedicated private key. This is useful for cases where the contents of the notarized document should remain more private, or when a person would like to make a blockchain notarization that is updatable, transferable, conjointly owned, or hold extra value.</li>
     </ul>
 
-    <h3>3.3. Making a File's Dedicated Private Key - Coloring HD Accounts - Creating an Apostille Account</h3>
+    <h3 id="dedicated-key">3.3. Making a File's Dedicated Private Key - Coloring HD Accounts - Creating an Apostille Account</h3>
 
     <p>A hierarchical deterministic (HD) account is generated from the file name, which is hashed using SHA-256 and then signed with user's private key.</p>
 
@@ -242,7 +242,7 @@
     <img src="/api/placeholder/416/305" alt="Process to create a colored HD account">
     <p><em>Figure 5. The process to create a colored HD account (Apostille account) from a document's name and account information which in turn make up its dedicated private key.</em></p>
 
-    <h3>3.4. Apostille Hashes - Preparing the Timestamp Fingerprint - Making the Blockchain Notarization</h3>
+    <h3 id="hashes">3.4. Apostille Hashes - Preparing the Timestamp Fingerprint - Making the Blockchain Notarization</h3>
 
     <p>An Apostille transaction message is the hash of the file data (document fingerprint) prepended with a custom Apostille hash header that begins with 4 byte magic bytes. The Apostille header helps us during an audit to determine the hashing algorithm used and if the hash was signed or not. Shown as follows:</p>
 
@@ -256,7 +256,7 @@
     <img src="/api/placeholder/550/255" alt="Apostille process for creating a document's private key">
     <p><em>Figure 7. The Apostille process for creating a document's private key, the dedicated HD account from that key, and the fingerprint of the original document that is sent to the dedicated HD account. Since it has been timestamped in the blockchain, it is now an Apostille blockchain notarization account.</em></p>
 
-    <h2>3.5. Differences of Hashes</h2>
+    <h2 id="differences">3.5. Differences of Hashes</h2>
 
     <p>Apostille allows users to pick from two different options when making a blockchain notarization. These options are 1) <em>public sync,</em> or, 2) <em>private, transferable, and updatable</em>. Additionally, a user can further choose from a list of hashing algorithms. The user's choices will result in the various kinds of hashes shown below.</p>
 
@@ -302,7 +302,7 @@
     <p>Now with added Apostille header example:<br>
     <code>fe4e54598379952024fa6fd302abda4dfef63b1499b786c4269305bbf08d4058b417a528421d4f877c5a00d34e2addeba650b23812777448f2226515c801e4a424eefa6e04</code></p>
 
-    <h2>3.6. Auditing Blockchain Notarizations</h2>
+    <h2 id="auditing">3.6. Auditing Blockchain Notarizations</h2>
 
     <p>To audit a file, we need to have the notarized document with a filename in a particular naming format. Documents that go through an Apostille blockchain notarization process will have their file name edited and pushed back to the user in a zipped folder that they may store it securely without editing it. The special naming format is as follows:</p>
 
@@ -322,7 +322,7 @@
 
     <p>If the hash is signed as with the case with a <em>private, updatable, and transferable</em> notarization, we verify the signature using the signer's public key, the signed file hash (in the transaction message) and the hash of the uploaded file.</p>
 
-    <h2>3.7. Transferring Control of a Blockchain Notarization's Colored HD Account</h2>
+    <h2 id="transferring">3.7. Transferring Control of a Blockchain Notarization's Colored HD Account</h2>
 
     <p>Since the notarized file's dedicated private key for its colored HD account (Apostille account) is only known by the maker of the blockchain notarization, the owner can freely turn that account into a 1-of-1 multisignature account, or any other combination of m-of-n they so choose.</p>
 
@@ -339,7 +339,7 @@
     <img src="/api/placeholder/440/323" alt="Transferring control of Account N">
     <p><em>Figure 10: In this diagram, Alice has decided to transfer control of Account N to Bob. In a single transaction with a few clicks, she can remove herself and add Bob. Bob now has full control of Account N.</em></p>
 
-    <h2>3.8. Updating a Blockchain Notarization</h2>
+    <h2 id="updating">3.8. Updating a Blockchain Notarization</h2>
 
     <p>There are two ways a blockchain notarization can be updated. The first case is for an entirely new version of the document to be notarized by rehashing it and putting its new fingerprint on the blockchain. The second case is to amend the original notarization by sending messages/memos to the Apostille account. The latter case is also good for use cases where additional notes need to be recorded on an ongoing basis about the notarized product.</p>
 
@@ -347,7 +347,7 @@
 
     <p>In some cases, registered and certified third parties that are neither the creator nor owner of the object might augment it and want to record their changes. They can then send messages to the Apostille account from their account reflecting their work. In an ideal situation the third party's account would be registered with a namespace to help with reputation, but this is optional.</p>
 
-    <h2>3.9 Making Multiple Party Contract Notarizations - Initiated, Signed, Updated, Controlled, and Transferred by Multiple Parties</h2>
+    <h2 id="multiple-party">3.9 Making Multiple Party Contract Notarizations - Initiated, Signed, Updated, Controlled, and Transferred by Multiple Parties</h2>
 
     <p>One obvious use case of a blockchain notarization system is to have multiple parties make a multisig account together and then make contract together, jointly sign it and jointly upload its fingerprint onto the blockchain to that contract's Apostille account from their shared multisig account. This acts as proof that all parties agreed to the contract at the time it was signed.</p>
 
@@ -359,7 +359,7 @@
 
     <p>These cosigners can then update, augment and renew the contract on chain by having all of them sign transactions over that Apostille account.</p>
 
-    <h2>3.10 Private and Public Chains - Apostille for Mijin</h2>
+    <h2 id="private-public">3.10 Private and Public Chains - Apostille for Mijin</h2>
 
     <p>Thus far this paper has mainly discussed using Apostille with the NEM public chain. But NEM has a sister blockchain technology, the private blockchain Mijin run by Tech Bureau. While Mijin and NEM are designed to meet different needs, they share much of the same underlying code and all of the same APIs. This makes any application running NEM Apostille capable of running on Mijin with very little effort in updating the code.</p>
 
@@ -372,26 +372,26 @@
 
     <img src="/api/placeholder/550/426" alt="Mijin and NEM blockchain networks">
     <p><em>Figure 12: The Mijin and NEM blockchain networks using the NEM Apostille notarization system.</em></p>
- <h1>4. Uses Cases</h1>
+ <h1 id="use-cases">4. Uses Cases</h1>
     
     <p>The following are use cases made to show the utility and range of Apostille accounts and notarizations.</p>
 
-    <h2>4.1.1. Car Title</h2>
+    <h2 id="car-title">4.1.1. Car Title</h2>
     <p>A car that has had its certificate of ownership notarized on the blockchain can have messages sent to its colored HD account reflecting what repairs and maintenance had been done and at what mileage. If those messages came from trusted car maintenance namespace accounts, one could believe that indeed the work was done properly. Mosaics created by trusted insurance or government organizations can be sent to the Apostille account, showing it had paid insurance or the car had been certified to meet certain standards.</p>
 
     <img src="/api/placeholder/600/400" alt="Car Title Use Case Illustration">
 
-    <h2>4.1.2. Government Registration</h2>
+    <h2 id="government-registration">4.1.2. Government Registration</h2>
     <p>A government could send a mosaic or message to the colored blockchain notarization HD account showing the car has been registered and taxes paid. In such cases, mosaics on the NEM system can be made to be "non-transferable" meaning that the controller of the colored HD account cannot send an official government mosaic representing the car's status to any other third parties. The only option would be to return to the original sender, which is the government in this case. Governments can also leave links that are either for data that is on or off the blockchain in the Apostille account that lead to more information, history, or registration of the car.</p>
 
     <img src="/api/placeholder/600/400" alt="Government Registration Use Case Illustration">
 
-    <h2>4.1.3. Digital Media Licenses</h2>
+    <h2 id="digital-media">4.1.3. Digital Media Licenses</h2>
     <p>A digital media blockchain license can have messages sent to it representing how many times a product has been streamed. It can also have messages sent to it detailing the terms of the license and limits put upon it. A namespace and digital asset can originate from the license account (Apostille account for that license) and these assets can be sent to others representing rights in the license.</p>
 
     <img src="/api/placeholder/600/400" alt="Digital Media Licenses Use Case Illustration">
 
-    <h2>4.1.4. Luxury Consumer Goods and Anti-Counterfeiting</h2>
+    <h2 id="luxury-goods">4.1.4. Luxury Consumer Goods and Anti-Counterfeiting</h2>
     <p>Companies with luxury goods can make a namespace account that only they can control. They can publish this name on their company profile. They can then make a blockchain notarization for each and every item using things like serial numbers, high definition scans, chemical makeup, and so on, to uniquely identify and register each item. Since each item is unique, and each is fingerprinted, and each blockchain notarization comes from a registered and recognized source, any competitor offering counterfeit products without an accompanying blockchain notarization will be easily identified.</p>
     <p>It could occasionally be updated with additional information regarding the condition of the product as it is maintained or repaired by registered and licensed professionals.</p>
     <p>A luxury good item could have a message sent about a recall to the Apostille account.</p>
@@ -399,17 +399,17 @@
 
     <img src="/api/placeholder/600/400" alt="Luxury Goods Anti-Counterfeiting Use Case Illustration">
 
-    <h2>4.1.5. Two-Party Legal Contracts</h2>
+    <h2 id="legal-contracts">4.1.5. Two-Party Legal Contracts</h2>
     <p>As mentioned in section 3.9, the Apostille system is an ideal candidate for making on-chain notarizations of contracts signed by multiple parties which can then later be updated or transferred if desired.</p>
 
     <img src="/api/placeholder/600/400" alt="Two-Party Legal Contracts Use Case Illustration">
 
-    <h2>4.2 Custom Use Cases</h2>
+    <h2 id="custom-cases">4.2 Custom Use Cases</h2>
     <p>While this paper describes and exact application framework convention for which the Apostille service has been built and released in NEM's NanoWallet, the system is highly adaptable and additional functions can be added in the future. Furthermore, the NanoWallet is open-sourced, written in Javascript, and connects to NEM with easy to use APIs so other parties looking to build specific business apps can make a new application framework convention for their app that interprets the rules for multisignature contracts, namespaces, mosaic assets, and messages with differently defined rules to meet their organizational needs.</p>
 
     <img src="/api/placeholder/600/400" alt="Custom Use Cases Illustration">
 
-    <h1>5. Conclusion</h1>
+    <h1 id="conclusion">5. Conclusion</h1>
     
     <p>This paper has proposed a blockchain powered account certification and notarization solution made possible on the NEM block chain platform. We believe the Apostille service is a unique and a notable improvement in blockchain technology. Bitcoin's UTXO system has proven very valuable and resilient over time for spending money, but has not been so useful for building greater blockchain applications. NEM has switched to an account state system and architecture with built-in features supported by the blockchain core protocol, thus enabling a new variety of application framework conventions to be set in motion and a new set of blockchain applications to be built.</p>
 
@@ -417,11 +417,11 @@
 
     <p>The Apostille service is an upgrade of the earlier blockchain notarization services where a notarization is only a one-time digitally fingerprinted record of a document on a blockchain. By combining the features of messages, namespaces, mosaics, and multisig and NEM's account system all being utilized with NEM's APIs, a dynamic blockchain notarization system where blockchain notarizations can be branded, registered, transferred, and updated is created. We believe that the Apostille service can unlock a new host of applications suitable for commercial applications not yet recognized on the blockchain, including apps for representing authenticity, identity, object state and status, property ownership, confidential records and more.</p>
 
-    <h1>Acknowledgements</h1>
+    <h1 id="acknowledgements">Acknowledgements</h1>
     
     <p>The Apostille project was financially supported by the NEM Community Fund. We would like to thank all the NEM community members that took time to show support for this project. The authors would also like to personally thank Jaguar0625, Lon Wong and Takao Asayama for their guidance and pearls of wisdom during the process of making Apostille. We would like to give credit to the NEM developers and NEM Core team. They have worked diligently for many years to make NEM technology the great platform it is today. And lastly we are immensely grateful for the greater NEM community for its backing and contributions.</p>
 
-    <h1>Bibliography</h1>
+    <h1 id="bibliography">Bibliography</h1>
     
     <p class="citation">Apostille. (2014). <i>Collins English Dictionary -- Complete and Unabridged, 12th Edition</i>. Retrieved October 2016, from <a href="http://www.thefreedictionary.com/Apostille">http://www.thefreedictionary.com/Apostille</a></p>
 
