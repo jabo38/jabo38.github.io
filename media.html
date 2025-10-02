@@ -36,400 +36,277 @@
     <meta name="apple-mobile-web-app-title" content="Jeff McDonald">
     <meta name="application-name" content="Jeff McDonald">
     
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
- 
-
-    <style>
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
-            color: #707070;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        nav {
-            background-color: #800080;
-            padding: 15px 0;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-radius: 5px;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav li {
-            margin: 0 10px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            transition: color 0.3s ease, background-color 0.3s ease;
-            padding: 8px 15px;
-            border-radius: 3px;
-        }
-        nav a:hover, nav a.active {
-            background-color: #fff;
-            color: #800080;
-        }
-        h1 {
-        text-align: center;
-        border-bottom: 2px solid #800080;
-        padding-bottom: 10px;
-        margin-bottom: 30px;
-        color: #800080;  /* Add this line */
-        }
-        .video-container {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        .video-container h2 {
-            color: #800080;
-            font-size: 1.2em;
-            padding: 15px;
-            margin: 0;
-            background-color: #f0e6ff;
-        }
-        .video-container p {
-            padding: 15px;
-            margin: 0;
-        }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        footer {
-            background-color: #f8f9fa;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 30px;
-            position: relative;
-        }
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background-color: #800080;
-        }
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding-top: 20px;
-        }
-        .social-icons a {
-            color: #800080;
-            font-size: 24px;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-        .social-icons a:hover {
-            color: #4b0082;
-        }
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .video-container h2 {
-                font-size: 1em;
-            }
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav li {
-                margin: 5px 0;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Main</a></li>
-            <li><a href="media.html" class="active">Media</a></li>
-            <li><a href="blog.html">Blog</a></li>  
-        </ul>
-    </nav>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Main</a></li>
+                <li><a href="media.html" class="active">Media</a></li>
+                <li><a href="blog.html">Blog</a></li>  
+            </ul>
+        </nav>
 
-    <header>
-        <h1>Media, Conference Speeches, and Interviews</h1>
-    </header>
+        <header>
+            <h1>Media, Conference Speeches, and Interviews</h1>
+        </header>
 
-    <main>
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">BBC World News Interview, CoinCheck (2018): Online</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/S3Cuhh6K00o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">BBC World News interviews Jeff McDonald about the Coincheck hack.</p>
-            <meta itemprop="uploadDate" content="2023-01-03T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/S3Cuhh6K00o/0.jpg">
-        </section>
-        
-         <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">Forbes Conference (2018): Moscow</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/1tC7F1WP9qk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Adara invited Jeff McDonald as a speaker at the Forbes blockchian conference for the further development of the Russian cryptocommunity.</p>
-            <meta itemprop="uploadDate" content="2023-01-02T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/1tC7F1WP9qk/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">Decentralized People's Awards, Best Leader (2019): Seoul </h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/Ib15oiStJv0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff was voted best leader in the industry of blockchain by community vote.</p>
-            <meta itemprop="uploadDate" content="2023-01-05T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/Ib15oiStJv0/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">Startup Thailand, LuxTag Intro (2017): Bangkok</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/M4TotUkWrbs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff fascinated the crowd by explaining digital certificates for a digital age. LuxTag provides proof of ownership & genuinity using blockchain technology. It provides confidence for consumers and big data for manufacturers.</p>
-            <meta itemprop="uploadDate" content="2023-01-15T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/M4TotUkWrbs/0.jpg">
-        </section>
-
-       <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">DeAI Day, Morpheus Talk, (2024): Toronto</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/XHHO2usUfVU" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff speaks at the Decentralize AI Day about the values of the Morpheus ecosystem and how it is helping to protect the privacy of the community.</p>
-            <meta itemprop="uploadDate" content="2024-01-01T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/XHHO2usUfVU/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">Let's Talk Bitcoin! #247 Podcast About Understanding the New Economy Movement, (2015): Online</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/DAmX_2yvZCQ" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">In one of Jeff's first podcasts, he is interviewed in 2015 discussing the New Economy Movement</p>
-            <meta itemprop="uploadDate" content="2015-01-01T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/DAmX_2yvZCQ/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">People of Crypto World Coverage of Jeff McDonald, (2017): Online </h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/DdwuTH47vCI" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff is profiled by KCN News.</p>
-            <meta itemprop="uploadDate" content="2017-01-01T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/DdwuTH47vCI/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">Jeff Visits the NEM Bar, (2017): Tokyo</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/SBqZ2zOQlu4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">In this video, Jeff visits the famous NEM Bar in Tokyo's Shibuya district and pays for drinks using the blockchain and XEM. NEM Bar is the world's first pub for NEMbers.</p>
-            <meta itemprop="uploadDate" content="2017-06-01T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/SBqZ2zOQlu4/0.jpg">
-        </section>
-        
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">The North American Bitcoin Conference, Decentralized Identity (2021): Online</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/TogIDxSswPE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff McDonald discusses how blockchain is uniquely qualified for identity services.</p>
-            <meta itemprop="uploadDate" content="2023-01-01T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/TogIDxSswPE/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">The North American Bitcoin Conference, (2020): Miami.</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/u2EHzsjCEdA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">The next generation of NEM has been 4 years in the making and represents the evolution, the next stage, in our journey to create the most robust, safest, and scalable blockchain solution ever built. Now, the NEM team is proud to announce NEM 2.0's details and launch.</p>
-            <meta itemprop="uploadDate" content="2023-01-04T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/u2EHzsjCEdA/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">BlockchainUA Conference, More than Just Timestamping (2018): Kiev</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/-oWnc-6MBek" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff McDonald's speech at BlockchainUA - the biggest blockchain conference in Ukraine. Jeff discusses how a blockchain can be used for things like non-fungible assets and voting. </p>
-            <meta itemprop="uploadDate" content="2023-01-06T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/-oWnc-6MBek/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">REIMAGINE 2020: API Driven Blockchains (2020): Online</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/bs1uE3qnvXU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff McDonald sits down with Patrick McLain of REIMAGINE 2020 to discuss why API driven blockchains are secure and the future of the industry.</p>
-            <meta itemprop="uploadDate" content="2023-01-07T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/bs1uE3qnvXU/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">CryptoCoin.News Interview with Maria Vovchok, The Future of the NEM Blockcahin (2018): Kiev</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/k2Yk2fQf71c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff discusses many different aspect of blockchain technology and the future roadmap. </p>
-            <meta itemprop="uploadDate" content="2023-01-08T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/k2Yk2fQf71c/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">PCCI's 44th Philippine Business Conference and Expo, Distuptive Technologies and the Trends to Watch (2018): Manila</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/heWuW_41F_A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff McDonald explaining what blockchain is and how it can be used in businesses at the 44th Philippine Business Conference & Expo, organized by Philippine Chamber of Commerce and Industry.</p>
-            <meta itemprop="uploadDate" content="2023-01-09T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/heWuW_41F_A/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">Blockchain Interviews - Jeff McDonald from LuxTag on Chronoswiss Bitcoin Watches (2018): Online</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/wQ-yINc0j08" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Today on Blockchain interviews, we dive deep with Jeff McDonald the Co-Founder of LuxTag. Chronoswiss and LuxTag have put out some limited edition Bitcoin watches which are all unique and recorded on the NEM Blockchain. We find out from Jeff what makes this watches so unique and what else LuxTag has in store.</p>
-            <meta itemprop="uploadDate" content="2023-01-10T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/wQ-yINc0j08/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">Blackarrow BTCC Blockchain Conference, Blockchain history, advanced applications, and NEM (2017): Mumbai</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/ah6hVVCXUi4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff McDonald discusses how and why the blockchain, in general, is a new and revolutionary platform for information exchange.</p>
-            <meta itemprop="uploadDate" content="2023-01-11T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/ah6hVVCXUi4/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">Hybrid Summit, Unlocking Advanced Blockchain Applications (2018): Bangkok</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/qO-Y9p6aU5U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff McDonald presented and explained NEM Technology at Hybrid Summit 2018 in Bangkok, Thailand.</p>
-            <meta itemprop="uploadDate" content="2023-01-12T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/qO-Y9p6aU5U/0.jpg">
-        </section>
-
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">BlockCon, Blockchain As A Platform For Fintech & Beyond (2017): Los Angeles</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/XcrYON5sFSk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">Jeff discusses using blockchain for money and beyond at BlockCon.</p>
-            <meta itemprop="uploadDate" content="2023-01-13T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/XcrYON5sFSk/0.jpg">
-        </section>
-        
-        <section class="video-container" itemscope itemtype="http://schema.org/VideoObject">
-            <h2 itemprop="name">The LuxTag Official Rap Music Video (FUN AT WORK) (2019): CyberJaya</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/z80eA98aRb0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p itemprop="description">LuxTag employees take a break away from work to have a little fun making an amateur rap video with the LuxTag theme song.</p>
-            <meta itemprop="uploadDate" content="2023-01-14T08:00:00+08:00">
-            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/z80eA98aRb0/0.jpg">
-        </section>
-
-        <section class="video-container">
-            <h2>Unboxing Chronoswiss & Tech Bureau Crypto-Watch - LuxTag (2018): Online</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/hRBfTQDiScc" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p>In this video, LuxTag's Co-Founder Jeff McDonald unboxes his new Crypto-Watch. Jeff purchased one of Chronoswiss & Tech Bureau Crypto-Watches: the 002/101 Bitcoin-themed watch.</p>
-        </section>
-
-        <section class="video-container">
-            <h2>LoyalCoin Interview (2018): Manila</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/sJYgn-fPXPM" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p>Jeff is interviewed for the weekly LoyalCoin series in a mall in Manila where using the blockchain to buy drinks from GongCha is demonstrated.</p>
-        </section>
-
-        <section class="video-container">
-            <h2>LuxTag deters counterfeits in a clever way (2019): CyberJaya</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/W9PO9ZWPqSc" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p>Jeff sits with LuxTag's Marketing Analyst, Kristina Aleshchenko to discuss how LuxTag's solution deters counterfeiting by using blockchain. Not only counterfeiting affects the luxury industry but it also impacts negatively a wide range of other sectors like clothing, pharmaceutical and education.</p>
-        </section>
+        <main>
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">BBC World News Interview, CoinCheck (2018): Online</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/S3Cuhh6K00o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">BBC World News interviews Jeff McDonald about the Coincheck hack.</p>
+                <meta itemprop="uploadDate" content="2023-01-03T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/S3Cuhh6K00o/0.jpg">
+            </section>
             
-        <section class="video-container">
-            <h2>Crypto-Bit Brothers Interview (2017): Online</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/d04O2FOU_Zs" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p>Interview with Jeff McDonald and the Crypto-Bit Brothers.</p>
-        </section>
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">Forbes Conference (2018): Moscow</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/1tC7F1WP9qk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Adara invited Jeff McDonald as a speaker at the Forbes blockchian conference for the further development of the Russian cryptocommunity.</p>
+                <meta itemprop="uploadDate" content="2023-01-02T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/1tC7F1WP9qk/0.jpg">
+            </section>
 
-        <section class="video-container">
-            <h2>Token TV Interview (2018): Moscow</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/bmUZWM2SK1A" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p>Jeff is interviewed by Token TV where he discusses the current state of blockchain technologies.</p>
-        </section>
-        
-        <section class="video-container">
-            <h2>BGN - Blockchain Global News Interview with Jeff McDonald (2018): Las Vegas</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/ZM3sVvgWoRA" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p>Jeff discusses his background and how he uses blockchain technology.</p>
-        </section>
-    </main>
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">Decentralized People's Awards, Best Leader (2019): Seoul </h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Ib15oiStJv0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff was voted best leader in the industry of blockchain by community vote.</p>
+                <meta itemprop="uploadDate" content="2023-01-05T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/Ib15oiStJv0/0.jpg">
+            </section>
 
-    <footer>
-        <div class="social-icons">
-            <a href="https://twitter.com/theJabo38" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/unstoppable_jexy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/jeffmcdonald/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/jeff.t.mcdonald" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://github.com/jabo38/jabo38.github.io" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://en.wikipedia.org/wiki/User:Jeff.t.mcdonald" target="_blank" rel="noopener noreferrer" aria-label="Wikipedia"><i class="fab fa-wikipedia-w"></i></a>
-            <a href="#" id="email-link" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="http://jefftmcdonald.blogspot.com" target="_blank" rel="noopener noreferrer" aria-label="Blogspot"><i class="fab fa-blogger"></i></a>
-        </div>
-    </footer>
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">Startup Thailand, LuxTag Intro (2017): Bangkok</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/M4TotUkWrbs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff fascinated the crowd by explaining digital certificates for a digital age. LuxTag provides proof of ownership & genuinity using blockchain technology. It provides confidence for consumers and big data for manufacturers.</p>
+                <meta itemprop="uploadDate" content="2023-01-15T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/M4TotUkWrbs/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">DeAI Day, Morpheus Talk, (2024): Toronto</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/XHHO2usUfVU" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff speaks at the Decentralize AI Day about the values of the Morpheus ecosystem and how it is helping to protect the privacy of the community.</p>
+                <meta itemprop="uploadDate" content="2024-01-01T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/XHHO2usUfVU/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">Let's Talk Bitcoin! #247 Podcast About Understanding the New Economy Movement, (2015): Online</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/DAmX_2yvZCQ" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">In one of Jeff's first podcasts, he is interviewed in 2015 discussing the New Economy Movement</p>
+                <meta itemprop="uploadDate" content="2015-01-01T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/DAmX_2yvZCQ/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">People of Crypto World Coverage of Jeff McDonald, (2017): Online </h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/DdwuTH47vCI" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff is profiled by KCN News.</p>
+                <meta itemprop="uploadDate" content="2017-01-01T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/DdwuTH47vCI/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">Jeff Visits the NEM Bar, (2017): Tokyo</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/SBqZ2zOQlu4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">In this video, Jeff visits the famous NEM Bar in Tokyo's Shibuya district and pays for drinks using the blockchain and XEM. NEM Bar is the world's first pub for NEMbers.</p>
+                <meta itemprop="uploadDate" content="2017-06-01T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/SBqZ2zOQlu4/0.jpg">
+            </section>
+            
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">The North American Bitcoin Conference, Decentralized Identity (2021): Online</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TogIDxSswPE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff McDonald discusses how blockchain is uniquely qualified for identity services.</p>
+                <meta itemprop="uploadDate" content="2023-01-01T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/TogIDxSswPE/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">The North American Bitcoin Conference, (2020): Miami.</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/u2EHzsjCEdA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">The next generation of NEM has been 4 years in the making and represents the evolution, the next stage, in our journey to create the most robust, safest, and scalable blockchain solution ever built. Now, the NEM team is proud to announce NEM 2.0's details and launch.</p>
+                <meta itemprop="uploadDate" content="2023-01-04T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/u2EHzsjCEdA/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">BlockchainUA Conference, More than Just Timestamping (2018): Kiev</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/-oWnc-6MBek" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff McDonald's speech at BlockchainUA - the biggest blockchain conference in Ukraine. Jeff discusses how a blockchain can be used for things like non-fungible assets and voting. </p>
+                <meta itemprop="uploadDate" content="2023-01-06T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/-oWnc-6MBek/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">REIMAGINE 2020: API Driven Blockchains (2020): Online</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/bs1uE3qnvXU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff McDonald sits down with Patrick McLain of REIMAGINE 2020 to discuss why API driven blockchains are secure and the future of the industry.</p>
+                <meta itemprop="uploadDate" content="2023-01-07T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/bs1uE3qnvXU/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">CryptoCoin.News Interview with Maria Vovchok, The Future of the NEM Blockcahin (2018): Kiev</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/k2Yk2fQf71c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff discusses many different aspect of blockchain technology and the future roadmap. </p>
+                <meta itemprop="uploadDate" content="2023-01-08T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/k2Yk2fQf71c/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">PCCI's 44th Philippine Business Conference and Expo, Distuptive Technologies and the Trends to Watch (2018): Manila</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/heWuW_41F_A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff McDonald explaining what blockchain is and how it can be used in businesses at the 44th Philippine Business Conference & Expo, organized by Philippine Chamber of Commerce and Industry.</p>
+                <meta itemprop="uploadDate" content="2023-01-09T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/heWuW_41F_A/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">Blockchain Interviews - Jeff McDonald from LuxTag on Chronoswiss Bitcoin Watches (2018): Online</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/wQ-yINc0j08" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Today on Blockchain interviews, we dive deep with Jeff McDonald the Co-Founder of LuxTag. Chronoswiss and LuxTag have put out some limited edition Bitcoin watches which are all unique and recorded on the NEM Blockchain. We find out from Jeff what makes this watches so unique and what else LuxTag has in store.</p>
+                <meta itemprop="uploadDate" content="2023-01-10T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/wQ-yINc0j08/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">Blackarrow BTCC Blockchain Conference, Blockchain history, advanced applications, and NEM (2017): Mumbai</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ah6hVVCXUi4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff McDonald discusses how and why the blockchain, in general, is a new and revolutionary platform for information exchange.</p>
+                <meta itemprop="uploadDate" content="2023-01-11T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/ah6hVVCXUi4/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">Hybrid Summit, Unlocking Advanced Blockchain Applications (2018): Bangkok</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/qO-Y9p6aU5U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff McDonald presented and explained NEM Technology at Hybrid Summit 2018 in Bangkok, Thailand.</p>
+                <meta itemprop="uploadDate" content="2023-01-12T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/qO-Y9p6aU5U/0.jpg">
+            </section>
+
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">BlockCon, Blockchain As A Platform For Fintech & Beyond (2017): Los Angeles</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/XcrYON5sFSk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">Jeff discusses using blockchain for money and beyond at BlockCon.</p>
+                <meta itemprop="uploadDate" content="2023-01-13T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/XcrYON5sFSk/0.jpg">
+            </section>
+            
+            <section class="section" itemscope itemtype="http://schema.org/VideoObject">
+                <h2 itemprop="name">The LuxTag Official Rap Music Video (FUN AT WORK) (2019): CyberJaya</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/z80eA98aRb0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p itemprop="description">LuxTag employees take a break away from work to have a little fun making an amateur rap video with the LuxTag theme song.</p>
+                <meta itemprop="uploadDate" content="2023-01-14T08:00:00+08:00">
+                <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/z80eA98aRb0/0.jpg">
+            </section>
+
+            <section class="section">
+                <h2>Unboxing Chronoswiss & Tech Bureau Crypto-Watch - LuxTag (2018): Online</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/hRBfTQDiScc" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>In this video, LuxTag's Co-Founder Jeff McDonald unboxes his new Crypto-Watch. Jeff purchased one of Chronoswiss & Tech Bureau Crypto-Watches: the 002/101 Bitcoin-themed watch.</p>
+            </section>
+
+            <section class="section">
+                <h2>LoyalCoin Interview (2018): Manila</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/sJYgn-fPXPM" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Jeff is interviewed for the weekly LoyalCoin series in a mall in Manila where using the blockchain to buy drinks from GongCha is demonstrated.</p>
+            </section>
+
+            <section class="section">
+                <h2>LuxTag deters counterfeits in a clever way (2019): CyberJaya</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/W9PO9ZWPqSc" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Jeff sits with LuxTag's Marketing Analyst, Kristina Aleshchenko to discuss how LuxTag's solution deters counterfeiting by using blockchain. Not only counterfeiting affects the luxury industry but it also impacts negatively a wide range of other sectors like clothing, pharmaceutical and education.</p>
+            </section>
+                
+            <section class="section">
+                <h2>Crypto-Bit Brothers Interview (2017): Online</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/d04O2FOU_Zs" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Interview with Jeff McDonald and the Crypto-Bit Brothers.</p>
+            </section>
+
+            <section class="section">
+                <h2>Token TV Interview (2018): Moscow</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/bmUZWM2SK1A" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Jeff is interviewed by Token TV where he discusses the current state of blockchain technologies.</p>
+            </section>
+            
+            <section class="section">
+                <h2>BGN - Blockchain Global News Interview with Jeff McDonald (2018): Las Vegas</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ZM3sVvgWoRA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Jeff discusses his background and how he uses blockchain technology.</p>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-icons">
+                <a href="https://twitter.com/theJabo38" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/unstoppable_jexy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/jeffmcdonald/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/jeff.t.mcdonald" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/jabo38/jabo38.github.io" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://en.wikipedia.org/wiki/User:Jeff.t.mcdonald" target="_blank" rel="noopener noreferrer" aria-label="Wikipedia"><i class="fab fa-wikipedia-w"></i></a>
+                <a href="#" id="email-link" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="http://jefftmcdonald.blogspot.com" target="_blank" rel="noopener noreferrer" aria-label="Blogspot"><i class="fab fa-blogger"></i></a>
+            </div>
+        </footer>
+    </div>
 
     <script>
         // Email protection script
