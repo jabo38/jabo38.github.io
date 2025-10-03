@@ -203,6 +203,7 @@ img {
     overflow: hidden;
     max-width: 100%;
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     border-radius: 8px;
     box-shadow: var(--shadow-md);
 }
@@ -257,6 +258,12 @@ img {
 
 .section h2:first-child {
     margin-top: 0;
+}
+
+/* Spacing for video description paragraphs */
+.section .video-container + p {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Blog Posts */
