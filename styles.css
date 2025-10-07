@@ -68,33 +68,6 @@ nav {
     margin-bottom: 30px;
     border-radius: 8px;
     box-shadow: var(--shadow-sm);
-    position: relative;
-}
-
-/* Hamburger Menu Button - Hidden by default, shown on mobile */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001;
-    transition: var(--transition);
-}
-
-.menu-toggle:hover {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.menu-toggle:focus {
-    outline: 2px solid #fff;
-    outline-offset: 4px;
 }
 
 nav ul {
@@ -396,74 +369,34 @@ footer {
         padding: 0 15px;
     }
 
-    /* HAMBURGER MENU FOR MOBILE */
-    .menu-toggle {
-        display: block;
-    }
-
+    /* IMPROVED MOBILE NAVIGATION */
     nav {
-        padding: 15px 20px;
+        padding: 10px 0;
+        margin-bottom: 20px;
     }
 
     nav ul {
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-        margin-top: 0;
-    }
-
-    nav ul.active {
-        max-height: 500px;
-        margin-top: 15px;
-        padding-top: 10px;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        gap: 8px;
+        padding: 0 10px;
     }
 
     nav li {
         margin: 0;
         width: 100%;
-        opacity: 0;
-        transform: translateX(-20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    nav ul.active li {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    nav ul.active li:nth-child(1) {
-        transition-delay: 0.1s;
-    }
-
-    nav ul.active li:nth-child(2) {
-        transition-delay: 0.2s;
-    }
-
-    nav ul.active li:nth-child(3) {
-        transition-delay: 0.3s;
     }
 
     nav a {
         display: block;
         width: 100%;
-        padding: 12px 20px;
-        text-align: left;
+        padding: 14px 20px;
+        text-align: center;
         font-size: 1.1rem;
-        border-radius: 5px;
-        margin-bottom: 5px;
-    }
-
-    nav a:hover {
-        transform: translateX(5px);
     }
 
     nav a.active {
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: #fff;
         color: var(--primary-color);
         font-weight: 600;
     }
@@ -498,12 +431,18 @@ footer {
         padding: 10px;
     }
 
+    /* EVEN BETTER SPACING FOR VERY SMALL SCREENS */
     nav {
-        padding: 12px 15px;
+        padding: 8px 0;
+    }
+
+    nav ul {
+        gap: 6px;
+        padding: 0 8px;
     }
 
     nav a {
-        padding: 10px 15px;
+        padding: 12px 16px;
         font-size: 1rem;
     }
 
@@ -531,7 +470,7 @@ footer {
         padding: 0;
     }
 
-    nav, .social-icons, .video-container, .back-to-top, .read-more, .menu-toggle {
+    nav, .social-icons, .video-container, .back-to-top, .read-more {
         display: none;
     }
 
