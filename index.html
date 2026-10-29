@@ -99,7 +99,10 @@
                 <h2>TEDx Talk</h2>
                 <p>In 2017, prior to the popularization and formalization of ERC-721 (2018), Jeff and Rene introduced the concept of utilizing blockchain for purposes beyond currency by proposing non-fungible assets on the blockchain.</p>
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/pjvE3um_wj4" title="TEDx Talk by Jeff McDonald" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    <button class="tedx-preview" type="button" aria-label="Play TEDx Talk by Jeff McDonald">
+                        <img src="images/tedx-still.png" alt="Jeff McDonald and Rene Bernard on the TEDx stage">
+                        <span class="tedx-play" aria-hidden="true">▶</span>
+                    </button>
                 </div>
             </section>
         </main>
@@ -118,6 +121,7 @@
         </footer>
     </div>
 
+    <script src="tedx-preview.js" defer></script>
     <script>
         // Email protection script
         document.getElementById('email-link').addEventListener('click', function(e) {
