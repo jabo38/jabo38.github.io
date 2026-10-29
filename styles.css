@@ -15,6 +15,7 @@
     --transition: all 0.3s ease;
 }
 
+
 /* Global styles */
 * {
     box-sizing: border-box;
@@ -497,10 +498,11 @@ footer {
     }
 }
 
-
 /* Visual refinements: retain the site's purple identity with a quieter finish. */
 @media screen {
-    :root { --max-width: 860px; }
+    :root {
+        --max-width: 860px;
+    }
     body { padding: 32px 20px 48px; line-height: 1.75; }
     .container { padding: 0; }
     nav { padding: 8px; margin-bottom: 48px; border-radius: 8px; }
@@ -537,5 +539,27 @@ footer {
         nav li { flex: 1; width: auto; }
         nav a { padding: 11px 8px; font-size: 1rem; }
         .section, .blog-post { padding: 1.4rem; }
+    }
+}
+
+/* Preview: a more composed layout using the existing palette. */
+@media screen {
+    .home-page header img { max-width: min(100%, 470px); }
+    .section, .blog-post { box-shadow: 0 1px 5px rgba(0, 0, 0, .06); }
+    .section h2, .blog-post h2 { margin-bottom: 1.2rem; }
+    .media-page .container { max-width: 1060px; }
+    .media-page main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
+    .media-page .section { margin: 0; padding: 1.5rem; height: 100%; }
+    .media-page .section h2 { font-size: 1.2rem; }
+    .media-page .video-container { margin: 1.25rem 0; }
+    .blog-page .blog-post { border-left: 0; border-top: 3px solid var(--primary-color); }
+    .blog-page .blog-post h2 { max-width: 30ch; }
+    .blog-page .post-meta { font-size: .85rem; font-weight: 500; margin-bottom: 1.25rem; }
+    .blog-page .read-more { background: none; color: var(--primary-color); padding: .2rem 0; margin-top: .2rem; border-radius: 0; }
+    .blog-page .read-more:hover, .blog-page .read-more:focus { background: none; color: var(--primary-color); box-shadow: none; text-decoration: underline; }
+    .social-icons { gap: 1rem; }
+    .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; }
+    @media (max-width: 700px) {
+        .media-page main { grid-template-columns: 1fr; }
     }
 }
